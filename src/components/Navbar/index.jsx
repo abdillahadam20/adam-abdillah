@@ -1,52 +1,27 @@
-import React, { useState, useEffect, useRef } from 'react';
-import LogoProfile from '../../assets/images/Logo-Adam-Abdillah.png';
-import './index.scss';
+import React, { useState } from 'react';
 
 const Navbar = () => {
-  const [click, setClick] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [isActive, setIsActive] = useState(false);
 
-  useEffect(() => {
-    window.addEventListener('navbar-scroll', handleScroll);
-    return () => {
-      window.removeEventListener('navbar-scroll', handleScroll);
-    };
-  }, []);
-
-  const handleScroll = () => {
-    if(window.pageYOffset > window.offsetTop) {
-      setScrolled(true);
-    } else {
-      setScrolled(false);
-    }
+  const handleClick = () => {
+    setIsActive(!isActive);
   }
-
-  const handleClick = (e) => {
-    setClick(e.target.classList.toggle('hamburger-menu'));
-  }
-  
 
   return (
-    <header onScroll={handleScroll} className="bg-transparent absolute top-0 left-0 w-full flex items-center z-10">
-        <div className="container">
-          <div className="flex items-center justify-between relative">
-            <div className="px-4">
-              <a href="#">
-                <img src={LogoProfile} alt="Logo" className="block py-6 w-40" />
-              </a>
-            </div>
-            <div className="flex items-center px-4">
-              <button onClick={handleClick} id="hamburger" name="hamburger" type="button" className="block absolute right-4">
-                <span className="hamburger-menu transition duration-300 ease-in-out origin-top-left"></span>
-                <span className="hamburger-menu transition duration-300 ease-in-out"></span>
-                <span className="hamburger-menu transition duration-300 ease-in-out origin-bottom-left"></span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </header>
+    <nav onClick={handleClick} className={`${!isActive ? "hidden-navbar absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none": ""}`}>
+      <ul className="block lg:flex">
+        <li clasName="group">
+          <a href="#home" className="text-base flex text-dark py-2 mx-8 hover:text-primary">Beranda</a>
+        </li>
+        <li clasName="group">
+          <a href="#about" className="text-base flex text-dark py-2 mx-8 hover:text-primary">About</a>
+        </li>
+        <li clasName="group">
+          <a href="#portofolio" className="text-base flex text-dark py-2 mx-8 hover:text-primary">Portofolio</a>
+        </li>
+      </ul>
+    </nav>
   )
 }
 
 export default Navbar;
-

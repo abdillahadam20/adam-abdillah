@@ -18,10 +18,10 @@ export default function HeroSection() {
             </div>
             <div className="w-full self-end px-4 lg:w-1/2">
               <div className="relative mt-10 lg:mt-0 lg:right-0">
-                <img src={Foto} alt="Adam Abdillah" className="max-w-full mx-auto" />
+                <img src={Foto} alt="Adam Abdillah" className="max-w-full mx-5 relative bottom-20" />
                 <span className="absolute -bottom-10 -z-10 left-1/2 -translate-x-1/2 md:scale-125 ">
                   <svg width="400" height="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                    <path fill="#06B6D4" d="M40.6,-43.1C50,-31.1,53.4,-15.6,53.4,0C53.5,15.7,50.2,31.3,40.8,42.6C31.3,53.9,15.7,60.8,-2.9,63.7C-21.4,66.6,-42.8,65.4,-55.2,54.1C-67.5,42.8,-70.8,21.4,-67.2,3.6C-63.6,-14.2,-53.2,-28.5,-40.8,-40.5C-28.5,-52.5,-14.2,-62.2,0.7,-62.9C15.6,-63.5,31.1,-55.1,40.6,-43.1Z" transform="translate(100 100) scale(1.1)" />
+                    <path fill="#06B6D4" d="M63.9,3C63.9,33,32,66.1,1.6,66.1C-28.7,66.1,-57.4,33,-57.4,3C-57.4,-27,-28.7,-54,1.6,-54C32,-54,63.9,-27,63.9,3Z" transform="translate(105 60) scale(1.1)" />
                   </svg>
                 </span>
               </div>
