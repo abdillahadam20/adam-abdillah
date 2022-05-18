@@ -15,6 +15,12 @@ module.exports = {
       },
       screen: {
         '2xl': '1320px'
+      },
+      blur: {
+        xs: '5px'
+      },
+      boxShadow: {
+        shadow: 'box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.3);'
       }
     },
   },

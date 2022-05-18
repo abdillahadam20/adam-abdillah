@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import LogoProfile from '../../assets/images/Logo-Adam-Abdillah.png';
+import { AiOutlineMenu } from "react-icons/ai";
 import './index.scss';
 import Navbar from '../Navbar';
 
@@ -36,11 +37,6 @@ const Header = () => {
               </a>
             </div>
             <div className="flex items-center px-4">
-              <button onClick={handleClick} id="hamburger" name="hamburger" type="button" className={`${isActive ? "hamburger-active block absolute right-4 lg:hidden" :""}`}>
-                <span className="hamburger-menu transition duration-300 ease-in-out origin-top-left"></span>
-                <span className="hamburger-menu transition duration-300 ease-in-out"></span>
-                <span className="hamburger-menu transition duration-300 ease-in-out origin-bottom-left"></span>
-              </button>
               <Navbar />
             </div>
           </div>

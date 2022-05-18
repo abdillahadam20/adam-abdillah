@@ -1,27 +1,80 @@
-import React, { useState } from 'react';
+/* This example requires Tailwind CSS v2.0+ */
+import { Fragment } from 'react'
+import { Disclosure, Menu, Transition } from '@headlessui/react'
+import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
+import Logo from '../../assets/images/Logo-Adam-Abdillah.png'
 
-const Navbar = () => {
-  const [isActive, setIsActive] = useState(false);
+const navigation = [
+  { name: 'Beranda', href: '#', current: true },
+  { name: 'Profile', href: '#', current: false },
+  { name: 'Portfolio', href: '#', current: false },
+  { name: 'Contact Me', href: '#', current: false },
+]
 
-  const handleClick = () => {
-    setIsActive(!isActive);
-  }
-
-  return (
-    <nav onClick={handleClick} className={`${!isActive ? "hidden-navbar absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none": ""}`}>
-      <ul className="block lg:flex">
-        <li clasName="group">
-          <a href="#home" className="text-base flex text-dark py-2 mx-8 hover:text-primary">Beranda</a>
-        </li>
-        <li clasName="group">
-          <a href="#about" className="text-base flex text-dark py-2 mx-8 hover:text-primary">About</a>
-        </li>
-        <li clasName="group">
-          <a href="#portofolio" className="text-base flex text-dark py-2 mx-8 hover:text-primary">Portofolio</a>
-        </li>
-      </ul>
-    </nav>
-  )
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
 }
 
-export default Navbar;
+export default function Example() {
+  return (
+    <div className="relative">
+      <Disclosure as="nav" className="bg-transparent backdrop-blur-[3px] fixed w-full shadow">
+      {({ open }) => (
+        <>
+          <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 relative">
+            <div className="relative flex items-center justify-between h-16">
+              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                {/* Mobile menu button*/}
+                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-primary focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                  <span className="sr-only">Open main menu</span>
+                  {open ? (
+                    <XIcon className="block h-6 w-6" aria-hidden="true" />
+                  ) : (
+                    <MenuIcon className="block h-6 w-6" aria-hidden="true" />
+                  )}
+                </Disclosure.Button>
+              </div>
+              <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+                <div className="flex-shrink-0 flex items-center">
+                  <img className="block lg:hidden h-8 w-auto" src={Logo} alt="Workflow" />
+                  <img className="hidden lg:block h-8 w-auto" src={Logo} alt="Workflow" />
+                </div>
+                <div className="hidden sm:block sm:ml-6">
+                  <div className="flex space-x-4">
+                    {navigation.map((item) => (
+                      <a key={item.name} href={item.href} className={classNames(
+                          item.current ? 'bg-primary text-white' : 'text-base hover:bg-primary hover:text-white', 'px-3 py-2 rounded-md text-sm font-medium')}
+                        aria-current={item.current ? 'page' : undefined} >
+                        {item.name}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <Disclosure.Panel className="sm:hidden">
+            <div className="px-2 pt-2 pb-3 space-y-1">
+              {navigation.map((item) => (
+                <Disclosure.Button
+                  key={item.name}
+                  as="a"
+                  href={item.href}
+                  className={classNames(
+                    item.current ? 'bg-primary text-white' : 'text-base hover:bg-primary hover:text-white',
+                    'block px-3 py-2 rounded-md text-base font-medium'
+                  )}
+                  aria-current={item.current ? 'page' : undefined}
+                >
+                  {item.name}
+                </Disclosure.Button>
+              ))}
+            </div>
+          </Disclosure.Panel>
+        </>
+      )}
+    </Disclosure>
+    </div>
+  )
+}

@@ -1,3 +1,4 @@
-.hidden-navbar {
-  @apply hidden;
+.navbar-scroll {
+  @apply fixed bg-white bg-opacity-70;
+  backgdrop-fillter: blur(5px);
 }
