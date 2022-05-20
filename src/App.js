@@ -1,15 +1,22 @@
-import HeroSection from "./components/HeroSection";
-import Header from "./components/Header";
 import Navbar from "./components/Navbar"
 import Portfolio from "./components/Portfolio";
-
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import About from "./components/About";
+import SPA from "./components/SPA";
+import Contact from "./components/Contact";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <HeroSection />
-      <Portfolio />
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={<SPA />} />
+          <Route exact path="/about" element={<About />} />
+          <Route exact path="/portfolio" element={<Portfolio />} />
+          <Route exact path="/contact" element={<Contact />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

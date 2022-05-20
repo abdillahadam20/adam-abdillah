@@ -1,0 +1,5 @@
+export const Picture1 = require('../../assets/images/desktop-design-card.jpg')
+export const Picture2 = require('../../assets/images/desktop-design-faq.jpg')
+export const Picture3 = require('../../assets/images/desktop-design-price.jpg')
+export const Picture4 = require('../../assets/images/desktop-design-section.jpg')
+export const Picture5 = require('../../assets/images/lasles.png')

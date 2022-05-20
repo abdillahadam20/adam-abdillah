@@ -3,12 +3,15 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 import Logo from '../../assets/images/Logo-Adam-Abdillah.png'
+import HeroSection from '../HeroSection'
+import About from '../About'
+import Portfolio from '../Portfolio'
 
 const navigation = [
-  { name: 'Beranda', href: '#', current: true },
-  { name: 'Profile', href: '#', current: false },
-  { name: 'Portfolio', href: '#', current: false },
-  { name: 'Contact Me', href: '#', current: false },
+  { name: 'Beranda', href: "/", current: true },
+  { name: 'About', href: "/about", current: false },
+  { name: 'Portfolio', href: "/portfolio", current: false },
+  { name: 'Contact Me', href: '/contact', current: false },
 ]
 
 function classNames(...classes) {
@@ -41,8 +44,8 @@ export default function Example() {
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
-                    {navigation.map((item) => (
-                      <a key={item.name} href={item.href} className={classNames(
+                    {navigation.map((item, index) => (
+                      <a key={index} href={item.href} className={classNames(
                           item.current ? 'bg-primary text-white' : 'text-base hover:bg-primary hover:text-white', 'px-3 py-2 rounded-md text-sm font-medium')}
                         aria-current={item.current ? 'page' : undefined} >
                         {item.name}
@@ -56,9 +59,9 @@ export default function Example() {
 
           <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {navigation.map((item) => (
+              {navigation.map((item, index) => (
                 <Disclosure.Button
-                  key={item.name}
+                  key={index}
                   as="a"
                   href={item.href}
                   className={classNames(

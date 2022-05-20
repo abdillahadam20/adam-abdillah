@@ -2,20 +2,21 @@ import React, { useState } from 'react';
 import Emoji, { EmojiProps } from 'a11y-react-emoji';
 import Foto from '../../assets/images/Foto-Adam-Abdillah.png';
 import About from '../About';
-import Portfolio from '../Portfolio';
 
+const nav = [
+  { href: "/about" },
+]
 export default function HeroSection() {
-
   return (
     <div>
-      <section className="pt-16">
+      <section className="pt-32">
         <div className="container">
           <div className="flex flex-wrap">
             <div className="w-full self-center px-4 lg:w-1/2">
               <h1 className="text-base font-semibold text-primary md :text-xl">Hi I'm <Emoji symbol="😄" label="smile" /><span className="block font-bold text-dark text-4xl mt-1 lg:text-5xl">Adam Abdillah</span></h1>
               <h2 className="font-medium text-secondary text-lg mb-5 lg:text-2xl">Junior Front End Developer</h2>
-              <p className="font-medium text-secondary mb-10 leading-relaxed">I started journey become a developer since 2020 and interested become a Software Developer. I learned code on youtube and read some blog. First i learned how to write HTML as a basic web framework then learned CSS as a styling and last learned Javascript Function and MySQL Databases. In 2021 I search a bootcamp to hone my skills programming and learned Fullstack Java Developer. I use Java for programming language and for framework I use Java Spring Boot.</p>
-              <a href="#" className="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out">Contact Me</a>
+              <p className="font-medium text-secondary mb-10 leading-relaxed">A self taught programmer</p>
+              <a href={<About/>} className="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out">Contact Me</a>
             </div>
             <div className="w-full self-end px-4 lg:w-1/2 -z-10">
               <div className="relative mt-10 lg:mt-0 lg:right-0">
@@ -30,7 +31,6 @@ export default function HeroSection() {
           </div>
         </div>
       </section>
-      <About />
     </div>
   )
 }
