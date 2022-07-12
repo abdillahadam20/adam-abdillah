@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.248159a2.css",
+    "main.js": "/static/js/main.02cc1dec.js",
+    "static/media/lasles.png": "/static/media/lasles.9ea3f9275e5f7f7857c1.png",
+    "static/media/Foto-Adam-Abdillah.png": "/static/media/Foto-Adam-Abdillah.377932dee0f7ac997d1f.png",
+    "static/media/desktop-design-faq.jpg": "/static/media/desktop-design-faq.6906e0bc5b81adc75c23.jpg",
+    "static/media/desktop-design-section.jpg": "/static/media/desktop-design-section.e63f461f1e1af3d3af88.jpg",
+    "static/media/desktop-design-price.jpg": "/static/media/desktop-design-price.7bafc1721c18bd4df3ef.jpg",
+    "static/media/desktop-design-card.jpg": "/static/media/desktop-design-card.814ed94e0c604e54affb.jpg",
+    "static/media/Logo-Adam-Abdillah.png": "/static/media/Logo-Adam-Abdillah.142753fef1e1189b5e3d.png",
+    "index.html": "/index.html",
+    "main.248159a2.css.map": "/static/css/main.248159a2.css.map",
+    "main.02cc1dec.js.map": "/static/js/main.02cc1dec.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.248159a2.css",
+    "static/js/main.02cc1dec.js"
+  ]
+}
